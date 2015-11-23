@@ -1,0 +1,99 @@
+$checkbox-width: 14px !default;
+$checkbox-height: $checkbox-width !default;
+
+phi-checkbox {
+    display: block;
+    white-space: nowrap;
+    cursor: pointer;
+    outline: none;
+    user-select: none;
+
+    .phi-container {
+        position: relative;
+        top: 4px;
+        display: inline-block;
+        width: $checkbox-width;
+        height: $checkbox-height;
+
+        &:after {
+            content: '';
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            bottom: -10px;
+            left: -10px;
+        }
+
+        .phi-ripple-container {
+            position: absolute;
+            display: block;
+            width: auto;
+            height: auto;
+            left: -15px;
+            top: -15px;
+            right: -15px;
+            bottom: -15px;
+        }
+    }
+
+    // unchecked
+    .phi-icon {
+        transition: 240ms;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: $checkbox-width;
+        height: $checkbox-height;
+        border: 2px solid #777;
+        border-radius: 2px;
+    }
+
+    &.phi-checked .phi-icon {
+        border: 2px solid transparent;
+    }
+
+    @include phi-colors((
+        background-color: 900
+    ), '.phi-checked .phi-icon');
+
+
+    // disabled
+    &[disabled] {
+        cursor: no-drop;
+        opacity: 0.6;
+    }
+
+    // focus
+    &:focus .phi-label:not(:empty) {
+        border-color: black;
+    }
+
+
+    &.phi-checked .phi-icon:after {
+        transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
+        position: absolute;
+        top: 0;
+        left: 4px;
+        display: table;
+        width: 4px;
+        height: 9px;
+        border: 2px solid;
+        border-top: 0;
+        border-left: 0;
+        content: ' ';
+
+        border-color: #fff;
+    }
+
+    .phi-label {
+        border: 1px dotted transparent;
+        position: relative;
+        display: inline-block;
+        margin-left: 10px;
+        vertical-align: middle;
+        white-space: normal;
+        pointer-events: none;
+        user-select: text;
+    }
+}

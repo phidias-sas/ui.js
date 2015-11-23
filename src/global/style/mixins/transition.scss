@@ -1,0 +1,32 @@
+//default transition property
+$phi-transition-property-default: all;
+
+//default transition duration
+$phi-transition-duration-default: 380ms;
+
+//default timing function: google's authentic motion (http://holko.pl/2014/07/09/authentic-motion-ios/)
+$phi-transition-timing-function-google: cubic-bezier(0.4, 0, 0.2, 1);
+
+$phi-transition-timing-function-default: $phi-transition-timing-function-google;
+
+//default delay
+$phi-transition-delay-default: 0s;
+
+@mixin phi-transition ($property: $phi-transition-property-default, $duration: $phi-transition-duration-default, $timing-function: $phi-transition-timing-function-default, $delay: $phi-transition-delay-default) {
+
+
+	//when there are several rules specifying a $property, only the last one prevails.  Workaround:
+	$property: all;
+
+    -webkit-transition: $property $duration $timing-function $delay;
+    -moz-transition:    $property $duration $timing-function $delay;
+    -o-transition:      $property $duration $timing-function $delay;
+    transition:         $property $duration $timing-function $delay;
+}
+
+// .phi-transition ($property: $phi-transition-property-default, $duration: $phi-transition-duration-default, $timing-function: $phi-transition-timing-function-default, $delay: $phi-transition-delay-default) when ($property = transform) {
+//     -webkit-transition: -webkit-transform $duration $timing-function $delay;
+//     -moz-transition:    -moz-transform $duration $timing-function $delay;
+//     -o-transition:      -o-transform $duration $timing-function $delay;
+//     transition:         $property $duration $timing-function $delay;
+// }

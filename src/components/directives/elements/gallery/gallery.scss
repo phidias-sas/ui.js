@@ -1,0 +1,133 @@
+phi-gallery {
+    display: block;
+}
+
+.phi-gallery-thumbnails {
+
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    & > li {
+
+        display: inline-block;
+        width: 140px;
+        height: 105px;
+        line-height: 105px;
+
+        margin: 4px;
+        //border: 4px solid #f4f4f4;
+
+        overflow: hidden;
+
+        cursor: pointer;
+        transform-origin: center;
+        transition: all 0.3s;
+
+        text-align: center;
+
+        & > img {
+            height: 100%;
+            vertical-align: middle;
+        }
+
+        & > p {
+            display: none;
+        }
+
+
+        &:hover {
+            transform: scale(1.05);
+        }
+    }
+}
+
+//Modals are outside <div#state-center>..
+.phi-gallery-modal {
+
+    background-color: rgba(0,0,0,0.9);
+    text-align: center;
+
+    & > .phi-gallery-modal-navigation {
+
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+
+        margin: 32px auto;
+
+        max-width: 800px;
+        min-height: 60px;
+
+        color: #fff;
+
+        span {
+            display: inline-block;
+            padding: 16px 22px;
+        }
+
+        a {
+
+            color: #fff;
+
+            display: inline-block;
+            cursor: pointer;
+            font-size: 1.2em;
+
+            padding: 16px 22px;
+            border-radius: 3px;
+
+            &:hover {
+                background-color: rgba(255, 255, 255, 0.1);
+            }
+
+            &.disabled {
+                cursor: default;
+                opacity: 0.6;
+            }
+
+        }
+
+    }
+
+    & > .phi-gallery-modal-contents {
+
+        position: relative;
+
+        & > div {
+
+            position: absolute;
+            width: 100%;
+            text-align: center;
+
+            transition: all 0.3s;
+            transform-origin: center;
+
+            opacity: 0;
+            transform: scale(0.95);
+
+            &.phi-switch-active {
+
+                opacity: 1;
+                transform: scale(1);
+
+            }
+
+        }
+
+        img {
+            max-width: 1000px;
+        }
+
+        p {
+            font-size: 1.5em;
+            color: #fff;
+            font-weight: normal;
+            padding: 8px 0;
+        }
+    }
+
+}

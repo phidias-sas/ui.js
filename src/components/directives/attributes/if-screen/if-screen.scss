@@ -1,0 +1,45 @@
+[phi-if-screen] {
+    display: none;
+}
+
+@media (max-width: $phi-screen-size-small) {
+    [phi-if-screen~=small] {
+        display: inline;   //since IE will not play nice with "initial", set an "inline" first
+        display: initial;
+    }
+}
+
+@media (min-width: $phi-screen-size-small) {
+    [phi-if-screen~=gt-small] {
+        display: inline;
+        display: initial;
+    }
+}
+
+@media (min-width: $phi-screen-size-small) and (max-width: $phi-screen-size-medium) {
+    [phi-if-screen~=medium] {
+        display: inline;
+        display: initial;
+    }
+}
+
+@media (min-width: $phi-screen-size-medium) {
+    [phi-if-screen~=gt-medium] {
+        display: inline;
+        display: initial;
+    }
+}
+
+@media (min-width: $phi-screen-size-medium) and (max-width: $phi-screen-size-large) {
+    [phi-if-screen~=large] {
+        display: inline;
+        display: initial;
+    }
+}
+
+@media (min-width: $phi-screen-size-large) {
+    [phi-if-screen~=gt-large] {
+        display: inline;
+        display: initial;
+    }
+}

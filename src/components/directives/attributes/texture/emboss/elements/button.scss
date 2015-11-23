@@ -1,0 +1,12 @@
+button[phi-texture="emboss"] {
+	padding: $phi-spacing-padding;
+
+	&:hover, &:focus {
+		@extend .phi-texture-emboss-highlighted;
+	}
+
+	&:active {
+		@extend .phi-texture-emboss-pressed;
+	}
+
+}

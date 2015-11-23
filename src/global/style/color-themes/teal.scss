@@ -1,0 +1,33 @@
+$phi-color-teal-50: #e0f2f1;
+$phi-color-teal-100: #b2dfdb;
+$phi-color-teal-200: #80cbc4;
+$phi-color-teal-300: #4db6ac;
+$phi-color-teal-400: #26a69a;
+$phi-color-teal-500: #009688;
+$phi-color-teal-600: #00897b;
+$phi-color-teal-700: #00796b;
+$phi-color-teal-800: #00695c;
+$phi-color-teal-900: #004d40;
+$phi-color-teal-A100: #a7ffeb;
+$phi-color-teal-A200: #64ffda;
+$phi-color-teal-A400: #1de9b6;
+$phi-color-teal-A700: #00bfa5;
+
+$phi-color-teal: (
+    50: $phi-color-teal-50,
+    100: $phi-color-teal-100,
+    200: $phi-color-teal-200,
+    300: $phi-color-teal-300,
+    400: $phi-color-teal-400,
+    500: $phi-color-teal-500,
+    600: $phi-color-teal-600,
+    700: $phi-color-teal-700,
+    800: $phi-color-teal-800,
+    900: $phi-color-teal-900,
+    A100: $phi-color-teal-A100,
+    A200: $phi-color-teal-A200,
+    A400: $phi-color-teal-A400,
+    A700: $phi-color-teal-A700
+);
+
+$phi-color-maps: map-merge($phi-color-maps, (teal: $phi-color-teal));

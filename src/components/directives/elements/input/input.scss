@@ -1,0 +1,150 @@
+[phi-input], phi-input {
+
+    display: inline-block;
+    vertical-align: bottom;
+    border-bottom: 1px solid #ccc;
+    white-space: nowrap;
+
+    & > div {
+
+        display: inline-block;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+
+        & > label {
+
+            display: block;
+            pointer-events: none;
+            -webkit-font-smoothing: antialased;
+
+            transform-origin: bottom left;
+            @include phi-transition(transform, 200ms);
+
+            transform: translate3d(0, 0, 0) scale(0.8);
+            @include phi-colors((
+                color: 600
+            ));
+
+        }
+
+        & > input,
+        & > textarea {
+
+            background: transparent;
+            border: 0;
+            margin: 0;
+            padding: 2px 0;
+            line-height: 1em;
+            min-height: 1em;
+            font-size: 1em;
+            width: 100%;
+            font-weight: normal;
+
+            outline: 0;
+
+
+            &::-webkit-input-placeholder { /* WebKit browsers */
+                opacity: 0;
+            }
+
+            &:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+               opacity: 0;
+            }
+
+            &::-moz-placeholder { /* Mozilla Firefox 19+ */
+               opacity: 0;
+            }
+
+            &:-ms-input-placeholder { /* Internet Explorer 10+ */
+               opacity: 0;
+            }
+
+        }
+
+    }
+
+    & > hr {
+
+        display: block;
+        height: 2px;
+
+        margin: 0;
+        padding: 0;
+        border: 0;
+
+        @include phi-colors((
+            background-color: 900
+        ));
+
+        @include phi-transition(width, 200ms);
+        width: 0;
+    }
+
+
+
+    &:focus {
+        outline: 0;
+    }
+
+
+    &.phi-input-disabled {
+
+        opacity: 0.7;
+
+        & > * {
+            cursor: no-drop !important;
+        }
+    }
+
+
+    &.phi-input-focused {
+
+        border-bottom: 1px solid transparent;
+
+        & > div {
+
+            & > label {
+                transform: translate3d(0, 0, 0) scale(0.8) !important;
+            }
+
+            & > input,
+            & > textarea {
+
+                &::-webkit-input-placeholder { /* WebKit browsers */
+                    opacity: 0.7;
+                }
+
+                &:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+                   opacity: 0.7;
+                }
+
+                &::-moz-placeholder { /* Mozilla Firefox 19+ */
+                   opacity: 0.7;
+                }
+
+                &:-ms-input-placeholder { /* Internet Explorer 10+ */
+                   opacity: 0.7;
+                }
+
+            }
+
+        }
+
+        & > hr {
+            width: 100%;
+        }
+
+    }
+
+
+    &.phi-input-empty {
+
+        & > div > label {
+            transform: translate3d(0, 1.4em, 0) scale(1);
+            color: #999;
+        }
+
+    }
+
+}

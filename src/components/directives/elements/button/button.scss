@@ -1,0 +1,13 @@
+[phi-button] {
+
+    &.cancel {
+        @extend [phi-z="0"];
+        background: transparent !important;
+        color: #444;
+
+        &:hover {
+            color: #900;
+        }
+    }
+
+}

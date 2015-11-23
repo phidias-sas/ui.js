@@ -1,0 +1,15 @@
+[phi-texture="emboss"] {
+
+    border: 1px solid #dcdcdc;
+    border-radius: $phi-spacing-radius;
+    @include phi-gradient(#f1f1f1, #f1f1f1, #fcfcfc);
+
+}
+
+.phi-texture-emboss-pressed {
+	@include phi-gradient(#f0f0f0, #f0f0f0, #eee);
+}
+
+.phi-texture-emboss-highlighted {
+	border: 1px solid #bbb;
+}

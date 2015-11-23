@@ -1,0 +1,25 @@
+@mixin phi-declare-colorizable-class($class, $property) {
+
+    @each $hue, $rgb in $phi-color-default {
+        .#{$class}-#{$hue} {
+            #{$property}: $rgb;
+            @include phi-transition($property);
+        }
+    }
+
+    @each $color-name, $color-map in $phi-color-maps {
+        @each $hue, $rgb in $color-map {
+            [phi-color-theme=#{$color-name}] .#{$class}-#{$hue} {
+                #{$property}: $rgb;
+            }
+
+            [phi-color-theme=#{$color-name}].#{$class}-#{$hue} {
+                #{$property}: $rgb !important;
+            }
+        }
+    }
+}
+
+@include phi-declare-colorizable-class(phi-color-background, background-color);
+@include phi-declare-colorizable-class(phi-color-font, color);
+@include phi-declare-colorizable-class(phi-color-border, border-color);

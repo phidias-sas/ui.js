@@ -1,0 +1,62 @@
+/*
+
+Set colors based on current color theme
+
+<div phi-color-theme="light-blue">
+    <div class="my-selector">Hello world</div>
+</div>
+
+
+.my-selector {
+
+    border: 3px solid;
+
+    @include phi-colors((
+        color: 600,
+        background: 50,
+        border-color: 900
+    ));
+
+}
+
+
+*/
+
+@mixin phi-colors($properties, $suffix: null) {
+
+    &#{$suffix} {
+        @each $property, $tone in $properties {
+            #{$property}: map-get($phi-color-default, $tone);
+        }
+    }
+
+    @each $color-name, $color-map in $phi-color-maps {
+        [phi-color-theme=#{$color-name}] &#{$suffix} {
+            @each $property, $tone in $properties {
+                #{$property}: map-get($color-map, $tone);
+            }
+        }
+
+        /*
+        The idea here is that themes specified via a selector get
+        assigned to the PARENT selector.
+
+        i.e.
+        .parent h1  ---->   .parent[phi-color-theme=#{$color-name}] h1
+
+        What this is doing is appending the theme selector to the LAST element:
+        .parent h1  ---->   .parent h1[phi-color-theme=#{$color-name}]
+
+        And until SASS allows us to target the FIRST element in the parent selector list, this will not work
+        for phi-colors() declared within children
+        */
+
+        &[phi-color-theme=#{$color-name}]#{$suffix} {
+            @each $property, $tone in $properties {
+                #{$property}: map-get($color-map, $tone) !important;
+            }
+        }
+
+
+    }
+}

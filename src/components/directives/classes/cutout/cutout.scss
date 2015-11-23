@@ -1,0 +1,45 @@
+.phi-cutout {
+	position: relative;
+}
+
+.phi-cutout-ridge {
+
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+
+	min-height: 200px;
+	overflow: hidden;
+
+	z-index: 9;
+
+	width: 16px;
+	border-right: 8px solid #f3f3f3;
+
+	& > div {
+
+		width: 8px;
+		position: absolute;
+
+		&:nth-child(1) {
+			top: 0;
+			height: 100px;
+			background: transparent url('img/shadow_top.png') no-repeat 100% 0;
+		}
+
+		&:nth-child(2) {
+			top: 100px;
+			bottom: 100px;
+			background: transparent url('img/shadow_mid.png') repeat-y 100% 100%;
+		}
+
+		&:nth-child(3) {
+			bottom: 0;
+			height: 100px;
+			background: transparent url('img/shadow_bottom.png') no-repeat 100% 100%;
+		}
+	}
+
+
+}

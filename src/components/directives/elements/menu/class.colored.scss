@@ -1,0 +1,39 @@
+phi-menu.phi-menu-colored {
+
+	@include phi-colors((
+		background: 600
+	), ' a[active=true]');
+
+	a {
+		
+		border-radius: $phi-spacing-radius;
+
+		&[active=true] {
+			color: #fff;
+		}
+	}
+
+
+	phi-submenu[expanded] {
+
+		@include phi-colors((
+			color: 600
+		), ' .phi-submenu-label');
+
+		@include phi-colors((
+			background-color: 600
+		), ' a[active=true]');
+
+
+		& > .phi-submenu-label {
+
+			@include phi-colors((
+				color: 600
+			));
+
+		}
+
+
+	}
+
+}

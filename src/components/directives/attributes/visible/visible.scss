@@ -1,0 +1,31 @@
+$phi-visible-transition-duration: 260ms;
+
+[phi-visible] {
+    opacity: 0;
+    z-index: -1;
+    visibility: hidden;    
+}
+
+[phi-visible="false"] {
+    opacity: 0;
+    z-index: -1;
+    visibility: hidden;
+
+    transition: opacity $phi-visible-transition-duration, 
+                max-height $phi-visible-transition-duration, 
+                -webkit-transform $phi-visible-transition-duration, 
+                visibility 0s linear $phi-visible-transition-duration, 
+                z-index 0s linear $phi-visible-transition-duration;
+}
+
+[phi-visible="true"] {
+    opacity: 1;
+    z-index: 99;
+    visibility: visible;
+
+    transition: opacity $phi-visible-transition-duration, 
+                max-height $phi-visible-transition-duration, 
+                -webkit-transform $phi-visible-transition-duration;
+}
+
+/* classes specify the visibility effect (describes how it becomes visible) */

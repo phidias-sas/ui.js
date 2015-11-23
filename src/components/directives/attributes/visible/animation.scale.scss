@@ -1,0 +1,11 @@
+[phi-visible-animation="scale"][phi-visible="false"] {
+	overflow: hidden;
+	opacity: 0.6;
+	max-height: 0;
+}
+
+[phi-visible-animation="scale"][phi-visible="true"] {
+    overflow: hidden;
+	opacity: 1;
+	max-height: 900px;
+}

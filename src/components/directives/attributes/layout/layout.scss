@@ -1,0 +1,284 @@
+/**
+
+Based on: https://github.com/angular/material/blob/master/src/core/style/layout.scss
+
+<div phi-layout="[row|column]" phi-layout-wrap phi-layout-padding phi-layout-margin>
+    <div phi-flex="[5, 10, 15 ... 33 ... 66 ... 100]"></div>
+    <div phi-flex-for-[small|medium|large]="[5, 10, 15 ... 33 ... 66 ... 100]"></div>
+</div>
+
+*/
+
+
+[phi-layout-padding],
+[phi-layout-padding] > * {
+    padding: $phi-spacing-gutter / 2;
+}
+
+[phi-layout-margin],
+[phi-layout-margin] > * {
+    margin: $phi-spacing-gutter / 2;
+}
+
+[phi-layout-wrap] {
+    flex-wrap: wrap;
+}
+
+[phi-layout-fill] {
+    margin: 0;
+    min-height: 100%;
+    width: 100%;
+}
+
+@-moz-document url-prefix() {
+    [phi-layout-fill] {
+        margin: 0;
+        width: 100%;
+        min-height: auto;
+        height: inherit;
+    }
+}
+
+@mixin phi-attribute-layout($suffix: null) {
+
+    $selector: 'phi-layout';
+    @if $suffix != null {
+        $selector: 'phi-layout-for-#{$suffix}';
+    }
+
+    [#{$selector}] {
+        box-sizing: border-box;
+
+        display: -webkit-box;
+        display: -webkit-flex;        
+        display: flex;
+
+        & > * {
+            flex: 1;
+        }
+    }
+
+    [#{$selector}=column] {
+        flex-direction: column;
+    }
+
+    [#{$selector}=row] {
+        flex-direction: row;
+    }
+
+}
+
+
+@mixin phi-attribute-flex($suffix: null) {
+
+    $selector: 'phi-flex';
+    @if $suffix != null {
+        $selector: 'phi-flex-for-#{$suffix}';
+    }
+
+    [#{$selector}] {
+        flex: 1;
+    }
+
+    // phi-flex=[0, 5, 10, 15, ...100]
+    @for $i from 0 through 20 {
+
+        [#{$selector}="#{$i * 5}"] {
+            flex: 0 0 #{$i * 5 + '%'};
+        }
+
+        [phi-layout="row"] > [#{$selector}="#{$i * 5}"] {
+            max-width: #{$i * 5 + '%'};
+        }
+
+        [phi-layout="column"] > [#{$selector}="#{$i * 5}"] {
+            max-height: #{$i * 5 + '%'};
+        }
+    }
+
+    // phi-flex=[33, 34, 66, 67]
+    [phi-layout="row"] {
+
+        & > [#{$selector}="33"],
+        & > [#{$selector}="34"] {
+            flex: 0 0 33.33%;
+            max-width: 33.33%;
+        }
+
+        & > [#{$selector}="66"],
+        & > [#{$selector}="67"] {
+            flex: 0 0 66.66%;
+            max-width: 66.66%;
+        }
+    }
+
+
+    [phi-layout="column"] {
+
+        & > [#{$selector}="33"],
+        & > [#{$selector}="34"] {
+            flex: 0 0 33.33%;
+            max-height: 33.33%;
+        }
+
+        & > [#{$selector}="66"],
+        & > [#{$selector}="67"] {
+            flex: 0 0 66.66%;
+            max-height: 66.66%;
+        }
+    }
+
+}
+
+// Alignment attributes for layout containers' children
+// Arrange on the Main Axis
+// center, start, end, space-between, space-around
+// flex-start is the default for justify-content
+// ------------------------------
+
+@mixin phi-attribute-layout-align($suffix: null) {
+
+    $selector: 'phi-layout-align';
+    @if $suffix != null {
+        $selector: 'phi-layout-align-for-#{$suffix}';
+    }
+
+    // Main Axis Center
+    [#{$selector}="center"], //stretch
+    [#{$selector}="center center"],
+    [#{$selector}="center start"],
+    [#{$selector}="center end"] {
+        justify-content: center;
+    }
+
+    // Main Axis End
+    [#{$selector}="end"], //stretch
+    [#{$selector}="end center"],
+    [#{$selector}="end start"],
+    [#{$selector}="end end"] {
+        justify-content: flex-end;
+    }
+
+    // Main Axis Space Around
+    [#{$selector}="space-around"], //stretch
+    [#{$selector}="space-around center"],
+    [#{$selector}="space-around start"],
+    [#{$selector}="space-around end"] {
+        justify-content: space-around;
+    }
+
+    // Main Axis Space Between
+    [#{$selector}="space-between"], //stretch
+    [#{$selector}="space-between center"],
+    [#{$selector}="space-between start"],
+    [#{$selector}="space-between end"] {
+        justify-content: space-between;
+    }
+
+
+    // Arrange on the Cross Axis
+    // center, start, end
+    // stretch is the default for align-items
+    // ------------------------------
+
+    // Cross Axis Center
+    [#{$selector}="center center"],
+    [#{$selector}="start center"],
+    [#{$selector}="end center"],
+    [#{$selector}="space-between center"],
+    [#{$selector}="space-around center"] {
+        align-items: center;
+    }
+
+    // Cross Axis Start
+    [#{$selector}="center start"],
+    [#{$selector}="start start"],
+    [#{$selector}="end start"],
+    [#{$selector}="space-between start"],
+    [#{$selector}="space-around start"] {
+        align-items: flex-start;
+    }
+
+    // Cross Axis End
+    [#{$selector}="center end"],
+    [#{$selector}="start end"],
+    [#{$selector}="end end"],
+    [#{$selector}="space-between end"],
+    [#{$selector}="space-around end"] {
+        align-items: flex-end;
+    }
+
+}
+
+@mixin phi-attribute-flex-order($suffix: null) {
+
+    $selector: 'phi-flex-order';
+    @if $suffix != null {
+        $selector: 'phi-flex-order-for-#{$suffix}';
+    }
+
+    [#{$selector}="0"] { order: 0; }
+    [#{$selector}="1"] { order: 1; }
+    [#{$selector}="2"] { order: 2; }
+    [#{$selector}="3"] { order: 3; }
+    [#{$selector}="4"] { order: 4; }
+    [#{$selector}="5"] { order: 5; }
+    [#{$selector}="6"] { order: 6; }
+    [#{$selector}="7"] { order: 7; }
+    [#{$selector}="8"] { order: 8; }
+    [#{$selector}="9"] { order: 9; }
+}
+
+
+@include phi-attribute-layout();
+@include phi-attribute-flex();
+@include phi-attribute-layout-align();
+@include phi-attribute-flex-order();
+
+// SMALL SCREEN
+@media (max-width: $phi-screen-size-small) {
+    @include phi-attribute-layout(small);
+    @include phi-attribute-flex(small);
+    @include phi-attribute-layout-align(small);
+    @include phi-attribute-flex-order(small);
+}
+
+// BIGGER THAN SMALL SCREEN
+@media (min-width: $phi-screen-size-small) {
+    @include phi-attribute-flex-order(gt-small);
+    @include phi-attribute-layout-align(gt-small);
+    @include phi-attribute-layout(gt-small);
+    @include phi-attribute-flex(gt-small);
+}
+
+// MEDIUM SCREEN
+@media (min-width: $phi-screen-size-small) and (max-width: $phi-screen-size-medium) {
+    @include phi-attribute-flex-order(medium);
+    @include phi-attribute-layout-align(medium);
+    @include phi-attribute-layout(medium);
+    @include phi-attribute-flex(medium);
+}
+
+// BIGGER THAN MEDIUM SCREEN
+@media (min-width: $phi-screen-size-medium) {
+    @include phi-attribute-flex-order(gt-medium);
+    @include phi-attribute-layout-align(gt-medium);
+    @include phi-attribute-layout(gt-medium);
+    @include phi-attribute-flex(gt-medium);
+}
+
+// LARGE SCREEN
+@media (min-width: $phi-screen-size-medium) and (max-width: $phi-screen-size-large) {
+    @include phi-attribute-flex-order(large);
+    @include phi-attribute-layout-align(large);
+    @include phi-attribute-layout(large);
+    @include phi-attribute-flex(large);
+}
+
+// BIGGER THAN LARGE SCREEN
+@media (min-width: $phi-screen-size-large) {
+    @include phi-attribute-flex-order(gt-large);
+    @include phi-attribute-layout-align(gt-large);
+    @include phi-attribute-layout(gt-large);
+    @include phi-attribute-flex(gt-large);
+}

@@ -1,0 +1,33 @@
+$phi-color-default-50: #dae8f8;
+$phi-color-default-100: #c7dcf5;
+$phi-color-default-200: #aeccf1;
+$phi-color-default-300: #94bcec;
+$phi-color-default-400: #7bace8;
+$phi-color-default-500: #619ce3;
+$phi-color-default-600: #5091e0;
+$phi-color-default-700: #3a83dc;
+$phi-color-default-800: #2676d8;
+$phi-color-default-900: #2062b3;
+$phi-color-default-A100: #a5c6ef;
+$phi-color-default-A200: #72a6e6;
+$phi-color-default-A400: #5c98e2;
+$phi-color-default-A700: #5c98e2;
+
+$phi-color-default: (
+    50: $phi-color-default-50,
+    100: $phi-color-default-100,
+    200: $phi-color-default-200,
+    300: $phi-color-default-300,
+    400: $phi-color-default-400,
+    500: $phi-color-default-500,
+    600: $phi-color-default-600,
+    700: $phi-color-default-700,
+    800: $phi-color-default-800,
+    900: $phi-color-default-900,
+    A100: $phi-color-default-A100,
+    A200: $phi-color-default-A200,
+    A400: $phi-color-default-A400,
+    A700: $phi-color-default-A700
+);
+
+$phi-color-maps: map-merge($phi-color-maps, (default: $phi-color-default));

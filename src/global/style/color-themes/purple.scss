@@ -1,0 +1,33 @@
+$phi-color-purple-50: #f3e5f5;
+$phi-color-purple-100: #e1bee7;
+$phi-color-purple-200: #ce93d8;
+$phi-color-purple-300: #ba68c8;
+$phi-color-purple-400: #ab47bc;
+$phi-color-purple-500: #9c27b0;
+$phi-color-purple-600: #8e24aa;
+$phi-color-purple-700: #7b1fa2;
+$phi-color-purple-800: #6a1b9a;
+$phi-color-purple-900: #4a148c;
+$phi-color-purple-A100: #ea80fc;
+$phi-color-purple-A200: #e040fb;
+$phi-color-purple-A400: #d500f9;
+$phi-color-purple-A700: #aa00ff;
+
+$phi-color-purple: (
+    50: $phi-color-purple-50,
+    100: $phi-color-purple-100,
+    200: $phi-color-purple-200,
+    300: $phi-color-purple-300,
+    400: $phi-color-purple-400,
+    500: $phi-color-purple-500,
+    600: $phi-color-purple-600,
+    700: $phi-color-purple-700,
+    800: $phi-color-purple-800,
+    900: $phi-color-purple-900,
+    A100: $phi-color-purple-A100,
+    A200: $phi-color-purple-A200,
+    A400: $phi-color-purple-A400,
+    A700: $phi-color-purple-A700
+);
+
+$phi-color-maps: map-merge($phi-color-maps, (purple: $phi-color-purple));

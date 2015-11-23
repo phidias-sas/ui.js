@@ -1,0 +1,20 @@
+.phi-drawer {
+
+    & > button {
+        display: block;
+        width: 100%;
+        text-align: left;
+        background: transparent;
+        color: #333;
+        border: 0;
+        cursor: pointer;
+        padding: 16px 20px;
+        text-transform: uppercase;
+    }
+
+    & > button:hover,
+    & > button.cancel {
+        background: #f6f6f6;
+    }
+
+}

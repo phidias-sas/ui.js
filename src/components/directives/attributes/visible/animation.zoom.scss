@@ -1,0 +1,16 @@
+[phi-visible-animation="zoom-in"][phi-visible="false"] {
+	-webkit-transform: scale(0.9);
+}
+
+[phi-visible-animation="zoom-in"][phi-visible="true"] {
+	-webkit-transform: scale(1);
+}
+
+
+[phi-visible-animation="zoom-out"][phi-visible="false"] {
+	-webkit-transform: scale(1.1);
+}
+
+[phi-visible-animation="zoom-out"][phi-visible="true"] {
+	-webkit-transform: scale(1);
+}

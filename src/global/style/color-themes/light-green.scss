@@ -1,0 +1,33 @@
+$phi-color-light-green-50: #f1f8e9;
+$phi-color-light-green-100: #dcedc8;
+$phi-color-light-green-200: #c5e1a5;
+$phi-color-light-green-300: #aed581;
+$phi-color-light-green-400: #9ccc65;
+$phi-color-light-green-500: #8bc34a;
+$phi-color-light-green-600: #7cb342;
+$phi-color-light-green-700: #689f38;
+$phi-color-light-green-800: #558b2f;
+$phi-color-light-green-900: #33691e;
+$phi-color-light-green-A100: #ccff90;
+$phi-color-light-green-A200: #b2ff59;
+$phi-color-light-green-A400: #76ff03;
+$phi-color-light-green-A700: #64dd17;
+
+$phi-color-light-green: (
+    50: $phi-color-light-green-50,
+    100: $phi-color-light-green-100,
+    200: $phi-color-light-green-200,
+    300: $phi-color-light-green-300,
+    400: $phi-color-light-green-400,
+    500: $phi-color-light-green-500,
+    600: $phi-color-light-green-600,
+    700: $phi-color-light-green-700,
+    800: $phi-color-light-green-800,
+    900: $phi-color-light-green-900,
+    A100: $phi-color-light-green-A100,
+    A200: $phi-color-light-green-A200,
+    A400: $phi-color-light-green-A400,
+    A700: $phi-color-light-green-A700
+);
+
+$phi-color-maps: map-merge($phi-color-maps, (light-green: $phi-color-light-green));

@@ -1,0 +1,33 @@
+$phi-color-pink-50: #fce4ec;
+$phi-color-pink-100: #f8bbd0;
+$phi-color-pink-200: #f48fb1;
+$phi-color-pink-300: #f06292;
+$phi-color-pink-400: #ec407a;
+$phi-color-pink-500: #e91e63;
+$phi-color-pink-600: #d81b60;
+$phi-color-pink-700: #c2185b;
+$phi-color-pink-800: #ad1457;
+$phi-color-pink-900: #880e4f;
+$phi-color-pink-A100: #ff80ab;
+$phi-color-pink-A200: #ff4081;
+$phi-color-pink-A400: #f50057;
+$phi-color-pink-A700: #c51162;
+
+$phi-color-pink: (
+    50: $phi-color-pink-50,
+    100: $phi-color-pink-100,
+    200: $phi-color-pink-200,
+    300: $phi-color-pink-300,
+    400: $phi-color-pink-400,
+    500: $phi-color-pink-500,
+    600: $phi-color-pink-600,
+    700: $phi-color-pink-700,
+    800: $phi-color-pink-800,
+    900: $phi-color-pink-900,
+    A100: $phi-color-pink-A100,
+    A200: $phi-color-pink-A200,
+    A400: $phi-color-pink-A400,
+    A700: $phi-color-pink-A700
+);
+
+$phi-color-maps: map-merge($phi-color-maps, (pink: $phi-color-pink));

@@ -1,0 +1,36 @@
+$phi-visible-slide-distance: 15px;
+
+[phi-visible-animation="slide-top"][phi-visible="false"] {
+    -webkit-transform: translate(0, -$phi-visible-slide-distance);
+}
+
+[phi-visible-animation="slide-top"][phi-visible="true"] {
+    -webkit-transform: translate(0, 0);
+}
+
+
+[phi-visible-animation="slide-bottom"][phi-visible="false"] {
+    -webkit-transform: translate(0, $phi-visible-slide-distance);
+}
+
+[phi-visible-animation="slide-bottom"][phi-visible="true"] {
+    -webkit-transform: translate(0, 0);
+}
+
+
+[phi-visible-animation="slide-left"][phi-visible="false"] {
+    -webkit-transform: translate(-$phi-visible-slide-distance, 0);
+}
+
+[phi-visible-animation="slide-left"][phi-visible="true"] {
+    -webkit-transform: translate(0, 0);
+}
+
+
+[phi-visible-animation="slide-right"][phi-visible="false"] {
+    -webkit-transform: translate($phi-visible-slide-distance, 0);
+}
+
+[phi-visible-animation="slide-right"][phi-visible="true"] {
+    -webkit-transform: translate(0, 0);
+}

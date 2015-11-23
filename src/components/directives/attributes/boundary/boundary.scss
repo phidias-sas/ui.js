@@ -1,0 +1,14 @@
+[phi-boundary] {
+    margin: auto;
+    padding: 0;
+    max-width: 1024px;
+}
+
+// SMALL SCREEN
+@media (max-width: $phi-screen-size-small) {
+
+    [phi-boundary] {
+        max-width: none;
+        padding: $phi-spacing-gutter * 0.5;
+    }
+}

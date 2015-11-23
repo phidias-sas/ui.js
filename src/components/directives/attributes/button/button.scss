@@ -1,0 +1,47 @@
+[phi-button] {
+
+    @extend [phi-z];
+
+	display: inline-block;
+	padding: $phi-spacing-padding;
+    border: 0;
+	border-radius: $phi-spacing-radius;
+
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: normal;
+
+    cursor: pointer;
+
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+
+    @include phi-colors((
+        background-color: 600
+    ));
+
+
+    &:hover, &:focus {
+
+        @extend [phi-z="2"];
+        outline: 0;
+
+        @include phi-colors((
+            background-color: 700
+        ));
+
+    }
+
+    &:active {
+        @extend [phi-z="0"];
+
+        @include phi-colors((
+            background-color: 700
+        ));
+    }
+}

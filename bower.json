@@ -5,6 +5,7 @@
     "./public/build/phidias-ui.js",
     "./public/build/phidias-ui.css"
   ],
+  "ignore": [],
   "dependencies": {
     "angular": ">=1.3.x",
     "angular-aria": "~1.4.7",

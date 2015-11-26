@@ -48,41 +48,41 @@
 
         };
 
-        phiGalleryController.$inject = ["$scope"];
-        function phiGalleryController($scope) {
+    };
 
-            var imageCount = 0;
 
-            var gallery = this;
+    phiGalleryController.$inject = ["$scope"];
+    function phiGalleryController($scope) {
 
-            gallery.control  = null;
+        var imageCount = 0;
 
-            gallery.title    = "foo";
-            gallery.images   = [];
-            gallery.addImage = addImage;
+        var gallery = this;
 
-            gallery.modalShown = false;
+        gallery.control  = null;
 
-            function addImage(galleryImage, element) {
+        gallery.title    = "foo";
+        gallery.images   = [];
+        gallery.addImage = addImage;
 
-                galleryImage.key = imageCount++;
+        gallery.modalShown = false;
 
-                gallery.images.push(galleryImage);
+        function addImage(galleryImage, element) {
 
-                element.on("click", function() {
-                    // !!! For some reason, the following code causes an error when minified
-                    $scope.$apply(function() {
-                        gallery.control.select(galleryImage.key);
-                        gallery.modalShown = true;
-                    });
+            galleryImage.key = imageCount++;
+
+            gallery.images.push(galleryImage);
+
+            element.on("click", function() {
+                // !!! For some reason, the following code causes an error when minified
+                $scope.$apply(function() {
+                    gallery.control.select(galleryImage.key);
+                    gallery.modalShown = true;
                 });
-            }
-
+            });
         }
 
-
-
     };
+
 
     function phiGalleryImage() {
 

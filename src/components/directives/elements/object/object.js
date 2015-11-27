@@ -41,7 +41,7 @@ someObject = {
     };
 
 
-    phiStatesController.$inject = ["$scope", "$element", "$controller", "$compile"];
+    phiObjectController.$inject = ["$scope", "$element", "$controller", "$compile"];
     function phiObjectController($scope, $element, $controller, $compile) {
 
         var scope;

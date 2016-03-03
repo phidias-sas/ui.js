@@ -30,4 +30,4 @@ $phi-color-cyan: (
     A700: $phi-color-cyan-A700
 );
 
-$phi-color-maps: map-merge($phi-color-maps, (cyan: $phi-color-cyan));
+$phi-color-themes: map-merge($phi-color-themes, (cyan: $phi-color-cyan));

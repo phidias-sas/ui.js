@@ -30,7 +30,7 @@ Set colors based on current color theme
         }
     }
 
-    @each $color-name, $color-map in $phi-color-maps {
+    @each $color-name, $color-map in $phi-color-themes {
         [phi-color-theme=#{$color-name}] &#{$suffix} {
             @each $property, $tone in $properties {
                 #{$property}: map-get($color-map, $tone);

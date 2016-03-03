@@ -7,7 +7,7 @@
         }
     }
 
-    @each $color-name, $color-map in $phi-color-maps {
+    @each $color-name, $color-map in $phi-color-themes {
         @each $hue, $rgb in $color-map {
             [phi-color-theme="#{$color-name}"] [#{$attribute}="#{$hue}"] {
                 #{$property}: $rgb;

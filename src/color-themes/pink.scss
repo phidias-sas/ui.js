@@ -30,4 +30,4 @@ $phi-color-pink: (
     A700: $phi-color-pink-A700
 );
 
-$phi-color-maps: map-merge($phi-color-maps, (pink: $phi-color-pink));
+$phi-color-themes: map-merge($phi-color-themes, (pink: $phi-color-pink));

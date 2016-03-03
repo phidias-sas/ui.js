@@ -24,8 +24,8 @@ angular.module("phidias-ui").directive("phiInput", [function() {
 
         template:   '<div>' +
                         '<label for="{{elementId}}" ng-bind="label"></label>' +
-                        '<input maxlength="{{maxlength}}" type="{{type||\'text\'}}" ng-if="!multiline" placeholder="{{placeholder}}" ng-focus="focus()" ng-blur="blur()" id="{{elementId}}" name="{{name}}" ng-model="$parent.ngModel" ng-disabled="state.disabled" ng-model-options="ngModelOptions||{}" />' +
-                        '<textarea maxlength="{{maxlength}}" ng-if="multiline" placeholder="{{placeholder}}" ng-focus="focus()" ng-blur="blur()" id="{{elementId}}" name="{{name}}" ng-model="$parent.ngModel" ng-disabled="state.disabled" ng-trim="false" ng-model-options="ngModelOptions||{}"></textarea>' +
+                        '<input maxlength="{{maxlength}}" type="{{type||\'text\'}}" ng-show="!multiline" placeholder="{{placeholder}}" ng-focus="focus()" ng-blur="blur()" id="{{elementId}}" name="{{name}}" ng-model="ngModel" ng-disabled="state.disabled" ng-model-options="ngModelOptions||{}" />' +
+                        '<textarea maxlength="{{maxlength}}" ng-show="multiline" placeholder="{{placeholder}}" ng-focus="focus()" ng-blur="blur()" id="{{elementId}}" name="{{name}}" ng-model="ngModel" ng-disabled="state.disabled" ng-trim="false" ng-model-options="ngModelOptions||{}"></textarea>' +
                     '</div>' +
                     '<hr />',
 
@@ -41,6 +41,14 @@ angular.module("phidias-ui").directive("phiInput", [function() {
                 disabled: (typeof attributes.disabled !== 'undefined') && attributes.disabled !== 'false' && attributes.disabled !== '0'
             };
 
+            /* copy all attributes (except those in scope) to child input */
+            var childInput = scope.multiline ? element.find('textarea') : element.find('input');
+            for (var property in attributes) {
+                if (!scope.hasOwnProperty(property) && property.charAt(0) != '$') {
+                    childInput.attr(property, attributes[property]);
+                }
+            }
+
             element.toggleClass("phi-input-disabled", scope.state.disabled);
 
             element.attr("tabindex", -1);
@@ -49,7 +57,6 @@ angular.module("phidias-ui").directive("phiInput", [function() {
                 var inputElement = scope.multiline ? element.find("textarea") : element.find("input");
                 inputElement[0].focus();
             });
-
 
             scope.focus = function() {
                 scope.state.focused = true;
@@ -62,7 +69,6 @@ angular.module("phidias-ui").directive("phiInput", [function() {
                 element.toggleClass('phi-input-focused', false);
                 scope.ngBlur();
             };
-
 
             scope.resizeTextarea = function() {
                 if (scope.multiline) {
@@ -81,7 +87,6 @@ angular.module("phidias-ui").directive("phiInput", [function() {
                     scope.ngChange();
                 }
             });
-
 
         }
 

@@ -1,6 +1,0 @@
-@mixin phi-icon($icon-name) {
-    font-family: FontAwesome;
-    content: map-get($phi-icon-map, $icon-name);
-    cursor: inherit;
-    font-style: normal;
-}

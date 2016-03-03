@@ -30,4 +30,4 @@ $phi-color-green: (
     A700: $phi-color-green-A700
 );
 
-$phi-color-maps: map-merge($phi-color-maps, (green: $phi-color-green));
+$phi-color-themes: map-merge($phi-color-themes, (green: $phi-color-green));

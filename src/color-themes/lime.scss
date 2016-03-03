@@ -30,4 +30,4 @@ $phi-color-lime: (
     A700: $phi-color-lime-A700
 );
 
-$phi-color-maps: map-merge($phi-color-maps, (lime: $phi-color-lime));
+$phi-color-themes: map-merge($phi-color-themes, (lime: $phi-color-lime));

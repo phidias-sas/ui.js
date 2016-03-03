@@ -927,11 +927,10 @@ function MdCheckboxDirective(inputDirective) {
         restrict: 'E',
         transclude: true,
         require: '?ngModel',
-        template:
-            '<div class="phi-container">' +
-                '<div class="phi-icon"></div>' +
-            '</div>' +
-            '<div ng-transclude class="phi-label"></div>',
+
+        template:   '<div class="phi-checkbox-box"></div>' +
+                    '<div ng-transclude class="phi-checkbox-label"></div>',
+
         compile: compile
     };
 
@@ -1180,8 +1179,8 @@ angular.module("phidias-ui").directive("phiInput", [function() {
 
         template:   '<div>' +
                         '<label for="{{elementId}}" ng-bind="label"></label>' +
-                        '<input maxlength="{{maxlength}}" type="{{type||\'text\'}}" ng-if="!multiline" placeholder="{{placeholder}}" ng-focus="focus()" ng-blur="blur()" id="{{elementId}}" name="{{name}}" ng-model="$parent.ngModel" ng-disabled="state.disabled" ng-model-options="ngModelOptions||{}" />' +
-                        '<textarea maxlength="{{maxlength}}" ng-if="multiline" placeholder="{{placeholder}}" ng-focus="focus()" ng-blur="blur()" id="{{elementId}}" name="{{name}}" ng-model="$parent.ngModel" ng-disabled="state.disabled" ng-trim="false" ng-model-options="ngModelOptions||{}"></textarea>' +
+                        '<input maxlength="{{maxlength}}" type="{{type||\'text\'}}" ng-show="!multiline" placeholder="{{placeholder}}" ng-focus="focus()" ng-blur="blur()" id="{{elementId}}" name="{{name}}" ng-model="ngModel" ng-disabled="state.disabled" ng-model-options="ngModelOptions||{}" />' +
+                        '<textarea maxlength="{{maxlength}}" ng-show="multiline" placeholder="{{placeholder}}" ng-focus="focus()" ng-blur="blur()" id="{{elementId}}" name="{{name}}" ng-model="ngModel" ng-disabled="state.disabled" ng-trim="false" ng-model-options="ngModelOptions||{}"></textarea>' +
                     '</div>' +
                     '<hr />',
 
@@ -1197,6 +1196,14 @@ angular.module("phidias-ui").directive("phiInput", [function() {
                 disabled: (typeof attributes.disabled !== 'undefined') && attributes.disabled !== 'false' && attributes.disabled !== '0'
             };
 
+            /* copy all attributes (except those in scope) to child input */
+            var childInput = scope.multiline ? element.find('textarea') : element.find('input');
+            for (var property in attributes) {
+                if (!scope.hasOwnProperty(property) && property.charAt(0) != '$') {
+                    childInput.attr(property, attributes[property]);
+                }
+            }
+
             element.toggleClass("phi-input-disabled", scope.state.disabled);
 
             element.attr("tabindex", -1);
@@ -1205,7 +1212,6 @@ angular.module("phidias-ui").directive("phiInput", [function() {
                 var inputElement = scope.multiline ? element.find("textarea") : element.find("input");
                 inputElement[0].focus();
             });
-
 
             scope.focus = function() {
                 scope.state.focused = true;
@@ -1218,7 +1224,6 @@ angular.module("phidias-ui").directive("phiInput", [function() {
                 element.toggleClass('phi-input-focused', false);
                 scope.ngBlur();
             };
-
 
             scope.resizeTextarea = function() {
                 if (scope.multiline) {
@@ -1237,7 +1242,6 @@ angular.module("phidias-ui").directive("phiInput", [function() {
                     scope.ngChange();
                 }
             });
-
 
         }
 
@@ -1557,42 +1561,42 @@ someObject = {
 /* Based on http://www.bennadel.com/blog/2756-experimenting-with-ngmodel-and-ngmodelcontroller-in-angularjs.htm */
 
 (function() {
-'use strict';
+    'use strict';
 
-angular
-    .module("phidias-ui")
-    .directive("phiSelect", phiSelect)
-    .directive("phiOption", phiOption);
+    angular
+        .module("phidias-ui")
+        .directive("phiSelect", phiSelect)
+        .directive("phiOption", phiOption);
 
-function phiSelect() {
+    function phiSelect() {
+
+        return {
+
+            restrict: "E",
+            require: "?ngModel",
+
+            transclude: true,
+            template:  '<div id="{{vm.uniqueId}}" class="phi-select-face" ng-click="vm.expand()" ng-class="{\'phi-select-expanded\': vm.isExpanded}">' +
+                           '<div ng-show="!vm.isExpanded" class="phi-select-value"></div>' +
+                           '<input ng-show="!!vm.isExpanded" type="text" ng-model="vm.query" tabindex="-1" size="2" />' +
+                       '</div>' +
+                       '<phi-menu ng-transclude phi-texture="paper" phi-tooltip-for="{{vm.uniqueId}}" phi-visible="{{vm.isExpanded}}" phi-visible-animation="slide-bottom"></phi-menu>',
+
+            scope: {
+                onSearch: "&phiOnSearch"
+            },
+
+            controller:       phiSelectController,
+            controllerAs:     "vm",
+            bindToController: true,
+
+            link: phiSelectLink
+
+        };
+
+    }
 
     var phiSelectLinkCounter = 0;
-
-    return {
-
-        restrict: "E",
-        require: "?ngModel",
-
-        transclude: true,
-        template:  '<div id="{{vm.uniqueId}}" class="phi-select-face" ng-click="vm.expand()" ng-class="{\'phi-select-expanded\': vm.isExpanded}">' +
-                       '<div ng-show="!vm.isExpanded" class="phi-select-value"></div>' +
-                       '<input ng-show="!!vm.isExpanded" type="text" ng-model="vm.query" tabindex="-1" size="2" />' +
-                   '</div>' +
-                   '<phi-menu ng-transclude phi-texture="paper" phi-tooltip-for="{{vm.uniqueId}}" phi-visible="{{vm.isExpanded}}" phi-visible-animation="slide-bottom"></phi-menu>',
-
-        scope: {
-            onSearch: "&phiOnSearch"
-        },
-
-        controller:       phiSelectController,
-        controllerAs:     "vm",
-        bindToController: true,
-
-        link: phiSelectLink
-
-    };
-
-
     function phiSelectLink(scope, element, attrs, ngModel) {
 
         // Prepare element
@@ -1638,7 +1642,7 @@ function phiSelect() {
             scope.vm.onSearch({query: newValue});
         });
 
-    };
+    }
 
 
     phiSelectController.$inject = ["$scope", "$document", "$element", "$timeout"];
@@ -1693,7 +1697,6 @@ function phiSelect() {
 
         };
 
-
         function documentClicked(e) {
 
             // Ignore clicks within element
@@ -1704,27 +1707,23 @@ function phiSelect() {
             $scope.$apply(vm.collapse);
         };
 
-
-    };
-
-};
+    }
 
 
-function phiOption() {
+    function phiOption() {
 
-    return {
-        restrict:   "E",
-        require:    "^phiSelect",
-        template:   '<a ng-transclude></a>',
-        transclude: true,
+        return {
+            restrict:   "E",
+            require:    "^phiSelect",
+            template:   '<a ng-transclude></a>',
+            transclude: true,
 
-        link: function(scope, element, attributes, phiSelect) {
-            phiSelect.attachOptionElement(element);
-        }
-    };
+            link: function(scope, element, attributes, phiSelect) {
+                phiSelect.attachOptionElement(element);
+            }
+        };
 
-};
-
+    }
 
 })();
 /*

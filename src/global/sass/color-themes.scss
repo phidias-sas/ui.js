@@ -1,3 +1,5 @@
+$phi-color-themes: ();
+
 $phi-color-default-50: #dae8f8;
 $phi-color-default-100: #c7dcf5;
 $phi-color-default-200: #aeccf1;
@@ -30,4 +32,4 @@ $phi-color-default: (
     A700: $phi-color-default-A700
 );
 
-$phi-color-maps: map-merge($phi-color-maps, (default: $phi-color-default));
+$phi-color-themes: map-merge($phi-color-themes, (default: $phi-color-default));

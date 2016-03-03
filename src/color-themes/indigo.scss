@@ -30,4 +30,4 @@ $phi-color-indigo: (
     A700: $phi-color-indigo-A700
 );
 
-$phi-color-maps: map-merge($phi-color-maps, (indigo: $phi-color-indigo));
+$phi-color-themes: map-merge($phi-color-themes, (indigo: $phi-color-indigo));

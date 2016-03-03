@@ -24,4 +24,4 @@ $phi-color-grey: (
     1000: $phi-color-grey-1000
 );
 
-$phi-color-maps: map-merge($phi-color-maps, (grey: $phi-color-grey));
+$phi-color-themes: map-merge($phi-color-themes, (grey: $phi-color-grey));

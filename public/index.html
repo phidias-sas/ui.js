@@ -1,19 +1,19 @@
 <!doctype html>
-<html ng-app="phidias.ui">
+<html ng-app="phidias-ui">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
         <title>Phidias</title>
 
-        <link rel="stylesheet" type="text/css" media="all" href="build/phidias.ui.app.min.css" />
-        <script src="build/phidias.ui.app.min.js" type="text/javascript"></script>
+        <link rel="stylesheet" type="text/css" media="all" href="build/phidias-ui.app.css" />
+        <script src="build/phidias-ui.app.js" type="text/javascript"></script>
     </head>
 
     <body ontouchstart="" onmouseover="">
         <div id="main-view" phi-boundary>
 
-            <h1 ng-click="esVisible = !esVisible">Tee hee</h1>
+            <h1 ng-click="esVisible = !esVisible" phi-color-theme="red" phi-color-font="900">Tee hee</h1>
 
             <div phi-visible="{{!!esVisible}}" ng-click="esVisible = false">
                 Well, it works!

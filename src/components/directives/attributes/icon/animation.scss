@@ -1,13 +1,17 @@
+$phi-icon-spin-duration: 2000ms;
+
+
 [phi-icon-animation="spin"] {
 
+    &[phi-icon]:before,
     &[phi-icon-left]:before,
     &[phi-icon-right]:after {
 
         display: inline-block;
-        -webkit-animation: phi-animation-spin 750ms infinite linear;
-        -moz-animation: phi-animation-spin 750ms infinite linear;
-        -o-animation: phi-animation-spin 750ms infinite linear;
-        animation: phi-animation-spin 750ms infinite linear;
+        -webkit-animation: phi-animation-spin $phi-icon-spin-duration infinite linear;
+        -moz-animation: phi-animation-spin $phi-icon-spin-duration infinite linear;
+        -o-animation: phi-animation-spin $phi-icon-spin-duration infinite linear;
+        animation: phi-animation-spin $phi-icon-spin-duration infinite linear;
 
         -webkit-animation-fill-mode: forwards;
 

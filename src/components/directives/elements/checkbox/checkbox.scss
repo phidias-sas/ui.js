@@ -1,60 +1,89 @@
-$checkbox-width: 14px !default;
+$checkbox-width: 18px !default;
 $checkbox-height: $checkbox-width !default;
 
 phi-checkbox {
-    display: block;
+
+    display: inline-block;
     white-space: nowrap;
     cursor: pointer;
     outline: none;
     user-select: none;
 
-    .phi-container {
-        position: relative;
-        top: 4px;
-        display: inline-block;
-        width: $checkbox-width;
-        height: $checkbox-height;
-
-        &:after {
-            content: '';
-            position: absolute;
-            top: -10px;
-            right: -10px;
-            bottom: -10px;
-            left: -10px;
-        }
-
-        .phi-ripple-container {
-            position: absolute;
-            display: block;
-            width: auto;
-            height: auto;
-            left: -15px;
-            top: -15px;
-            right: -15px;
-            bottom: -15px;
-        }
-    }
+    height: $checkbox-height;
 
     // unchecked
-    .phi-icon {
-        transition: 240ms;
-        position: absolute;
-        top: 0;
-        left: 0;
+    .phi-checkbox-box {
+
+        display: inline-block;
+        vertical-align: middle;
+
+        box-sizing: border-box;
         width: $checkbox-width;
         height: $checkbox-height;
+
         border: 2px solid #777;
         border-radius: 2px;
+
+        transition: 240ms;
+
     }
 
-    &.phi-checked .phi-icon {
-        border: 2px solid transparent;
+    .phi-checkbox-label {
+
+        display: inline-block;
+        vertical-align: middle;
+
+        margin-left: 10px;
+        white-space: normal;
+        pointer-events: none;
+        user-select: text;
     }
+
+
+
+    &.phi-checked {
+
+        .phi-checkbox-box {
+
+            border: 2px solid transparent;
+            text-align: center;
+
+            /* The checkbox tick */
+            &:after {
+
+                content: ' ';
+
+                width: 35%;
+                height: 60%;
+
+                min-width: 6px;
+                min-height: 11px;
+
+                border: 3px solid #fff;
+                border-top: 0;
+                border-left: 0;
+
+                margin: auto;
+                margin-top: 6%;
+
+                transform: rotate(45deg);
+                -webkit-transform: rotate(45deg);
+
+                display: block;
+                box-sizing: border-box;
+
+            }
+
+
+        }
+
+
+    }
+
 
     @include phi-colors((
         background-color: 900
-    ), '.phi-checked .phi-icon');
+    ), '.phi-checked .phi-checkbox-box');
 
 
     // disabled
@@ -64,36 +93,8 @@ phi-checkbox {
     }
 
     // focus
-    &:focus .phi-label:not(:empty) {
+    &:focus .phi-checkbox-label:not(:empty) {
         border-color: black;
     }
 
-
-    &.phi-checked .phi-icon:after {
-        transform: rotate(45deg);
-        -webkit-transform: rotate(45deg);
-        position: absolute;
-        top: 0;
-        left: 4px;
-        display: table;
-        width: 4px;
-        height: 9px;
-        border: 2px solid;
-        border-top: 0;
-        border-left: 0;
-        content: ' ';
-
-        border-color: #fff;
-    }
-
-    .phi-label {
-        border: 1px dotted transparent;
-        position: relative;
-        display: inline-block;
-        margin-left: 10px;
-        vertical-align: middle;
-        white-space: normal;
-        pointer-events: none;
-        user-select: text;
-    }
 }

@@ -20,4 +20,4 @@ $phi-color-blue-grey: (
     800: $phi-color-blue-grey-800
 );
 
-$phi-color-maps: map-merge($phi-color-maps, (blue-grey: $phi-color-blue-grey));
+$phi-color-themes: map-merge($phi-color-themes, (blue-grey: $phi-color-blue-grey));

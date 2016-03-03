@@ -22,4 +22,4 @@ $phi-color-brown: (
     900: $phi-color-brown-900
 );
 
-$phi-color-maps: map-merge($phi-color-maps, (brown: $phi-color-brown));
+$phi-color-themes: map-merge($phi-color-themes, (brown: $phi-color-brown));

@@ -18903,7 +18903,7 @@ Based on: https://github.com/angular/material/blob/master/src/core/style/layout.
 [phi-visible-animation="scale"][phi-visible="true"] {
   overflow: hidden;
   opacity: 1;
-  max-height: 900px; }
+  max-height: 1600px; }
 
 [phi-visible-animation="slide-top"][phi-visible="false"] {
   -webkit-transform: translate(0, -15px); }
@@ -19095,89 +19095,13 @@ phi-checkbox {
   phi-checkbox:focus .phi-checkbox-label:not(:empty) {
     border-color: black; }
 
-phi-content {
-  display: block;
-  height: 100%; }
-
 phi-cover {
   display: block;
   background-size: cover; }
 
-phi-gallery {
-  display: block; }
-
-.phi-gallery-thumbnails {
-  list-style: none;
-  margin: 0;
-  padding: 0; }
-  .phi-gallery-thumbnails > li {
-    display: inline-block;
-    width: 140px;
-    height: 105px;
-    line-height: 105px;
-    margin: 4px;
-    overflow: hidden;
-    cursor: pointer;
-    transform-origin: center;
-    transition: all 0.3s;
-    text-align: center; }
-    .phi-gallery-thumbnails > li > img {
-      height: 100%;
-      vertical-align: middle; }
-    .phi-gallery-thumbnails > li > p {
-      display: none; }
-    .phi-gallery-thumbnails > li:hover {
-      transform: scale(1.05); }
-
-.phi-gallery-modal {
-  background-color: rgba(0, 0, 0, 0.9);
-  text-align: center; }
-  .phi-gallery-modal > .phi-gallery-modal-navigation {
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    margin: 32px auto;
-    max-width: 800px;
-    min-height: 60px;
-    color: #fff; }
-    .phi-gallery-modal > .phi-gallery-modal-navigation span {
-      display: inline-block;
-      padding: 16px 22px; }
-    .phi-gallery-modal > .phi-gallery-modal-navigation a {
-      color: #fff;
-      display: inline-block;
-      cursor: pointer;
-      font-size: 1.2em;
-      padding: 16px 22px;
-      border-radius: 3px; }
-      .phi-gallery-modal > .phi-gallery-modal-navigation a:hover {
-        background-color: rgba(255, 255, 255, 0.1); }
-      .phi-gallery-modal > .phi-gallery-modal-navigation a.disabled {
-        cursor: default;
-        opacity: 0.6; }
-  .phi-gallery-modal > .phi-gallery-modal-contents {
-    position: relative; }
-    .phi-gallery-modal > .phi-gallery-modal-contents > div {
-      position: absolute;
-      width: 100%;
-      text-align: center;
-      transition: all 0.3s;
-      transform-origin: center;
-      opacity: 0;
-      transform: scale(0.95); }
-      .phi-gallery-modal > .phi-gallery-modal-contents > div.phi-switch-active {
-        opacity: 1;
-        transform: scale(1); }
-    .phi-gallery-modal > .phi-gallery-modal-contents img {
-      max-width: 1000px; }
-    .phi-gallery-modal > .phi-gallery-modal-contents p {
-      font-size: 1.5em;
-      color: #fff;
-      font-weight: normal;
-      padding: 8px 0; }
+phi-content {
+  display: block;
+  height: 100%; }
 
 [phi-input], phi-input {
   display: inline-block;
@@ -19317,6 +19241,82 @@ phi-gallery {
   [phi-input].phi-input-empty > div > label, phi-input.phi-input-empty > div > label {
     transform: translate3d(0, 1.4em, 0) scale(1);
     color: #999; }
+
+phi-gallery {
+  display: block; }
+
+.phi-gallery-thumbnails {
+  list-style: none;
+  margin: 0;
+  padding: 0; }
+  .phi-gallery-thumbnails > li {
+    display: inline-block;
+    width: 140px;
+    height: 105px;
+    line-height: 105px;
+    margin: 4px;
+    overflow: hidden;
+    cursor: pointer;
+    transform-origin: center;
+    transition: all 0.3s;
+    text-align: center; }
+    .phi-gallery-thumbnails > li > img {
+      height: 100%;
+      vertical-align: middle; }
+    .phi-gallery-thumbnails > li > p {
+      display: none; }
+    .phi-gallery-thumbnails > li:hover {
+      transform: scale(1.05); }
+
+.phi-gallery-modal {
+  background-color: rgba(0, 0, 0, 0.9);
+  text-align: center; }
+  .phi-gallery-modal > .phi-gallery-modal-navigation {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    margin: 32px auto;
+    max-width: 800px;
+    min-height: 60px;
+    color: #fff; }
+    .phi-gallery-modal > .phi-gallery-modal-navigation span {
+      display: inline-block;
+      padding: 16px 22px; }
+    .phi-gallery-modal > .phi-gallery-modal-navigation a {
+      color: #fff;
+      display: inline-block;
+      cursor: pointer;
+      font-size: 1.2em;
+      padding: 16px 22px;
+      border-radius: 3px; }
+      .phi-gallery-modal > .phi-gallery-modal-navigation a:hover {
+        background-color: rgba(255, 255, 255, 0.1); }
+      .phi-gallery-modal > .phi-gallery-modal-navigation a.disabled {
+        cursor: default;
+        opacity: 0.6; }
+  .phi-gallery-modal > .phi-gallery-modal-contents {
+    position: relative; }
+    .phi-gallery-modal > .phi-gallery-modal-contents > div {
+      position: absolute;
+      width: 100%;
+      text-align: center;
+      transition: all 0.3s;
+      transform-origin: center;
+      opacity: 0;
+      transform: scale(0.95); }
+      .phi-gallery-modal > .phi-gallery-modal-contents > div.phi-switch-active {
+        opacity: 1;
+        transform: scale(1); }
+    .phi-gallery-modal > .phi-gallery-modal-contents img {
+      max-width: 1000px; }
+    .phi-gallery-modal > .phi-gallery-modal-contents p {
+      font-size: 1.5em;
+      color: #fff;
+      font-weight: normal;
+      padding: 8px 0; }
 
 phi-menu.phi-menu-colored {
   /*

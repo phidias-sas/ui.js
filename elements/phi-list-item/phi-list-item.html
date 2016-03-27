@@ -1,0 +1,42 @@
+<link rel="import" href="../../../polymer/polymer.html">
+
+<dom-module id="phi-list-item">
+
+    <template>
+        <content></content>
+    </template>
+
+    <style>
+        :host {
+            display: block;
+            position: relative;
+
+            box-sizing: border-box;
+            padding: 16px;
+            min-height: 48px;
+
+            cursor: pointer;
+
+            font-size: 16px;
+
+            white-space: nowrap;
+        }
+
+        :host:hover {
+            background-color: rgba(0,0,0, 0.05);
+        }
+
+        :host ::content > * {
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 32px;
+        }
+
+    </style>
+
+    <script>
+        Polymer({
+            is: 'phi-list-item'
+        });
+    </script>
+</dom-module>

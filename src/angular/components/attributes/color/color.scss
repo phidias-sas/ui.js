@@ -1,0 +1,27 @@
+// !!! Color generation is DISABLED.  To enable uncomment this file
+
+// @mixin phi-declare-color-attribute($attribute, $property) {
+
+//     @each $hue, $rgb in $phi-color-default {
+//         [#{$attribute}="#{$hue}"] {
+//             #{$property}: $rgb;
+//             @include phi-transition($property);
+//         }
+//     }
+
+//     @each $color-name, $color-map in $phi-color-themes {
+//         @each $hue, $rgb in $color-map {
+//             [phi-color-theme="#{$color-name}"] [#{$attribute}="#{$hue}"] {
+//                 #{$property}: $rgb;
+//             }
+
+//             [phi-color-theme="#{$color-name}"][#{$attribute}="#{$hue}"] {
+//                 #{$property}: $rgb !important;
+//             }
+//         }
+//     }
+// }
+
+// @include phi-declare-color-attribute(phi-color-background, background-color);
+// @include phi-declare-color-attribute(phi-color-font, color);
+// @include phi-declare-color-attribute(phi-color-border, border-color);

@@ -7,8 +7,8 @@
   ],
   "ignore": [],
   "dependencies": {
-    "angular": ">=1.4.x",
+    "angular": "*",
     "angular-aria": "*",
-    "polymer": "Polymer/polymer#^1.2.0"
+    "polymer": "Polymer/polymer"
   }
 }

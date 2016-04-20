@@ -5834,6 +5834,16 @@ Set colors based on current color theme
 .phi-rounded {
   border-radius: 3px; }
 
+[phi-boundary] {
+  margin: auto;
+  padding: 0;
+  max-width: 1024px; }
+
+@media (max-width: 600px) {
+  [phi-boundary] {
+    max-width: none;
+    padding: 4px; } }
+
 [phi-button] {
   display: inline-block;
   padding: 12px 20px;
@@ -7675,45 +7685,6 @@ Based on: https://github.com/angular/material/blob/master/src/core/style/layout.
 [phi-z="5"] {
   box-shadow: 0 19px 36px 0 #8a8a8a; }
 
-[phi-boundary] {
-  margin: auto;
-  padding: 0;
-  max-width: 1024px; }
-
-@media (max-width: 600px) {
-  [phi-boundary] {
-    max-width: none;
-    padding: 4px; } }
-
-.phi-cutout {
-  position: relative; }
-
-.phi-cutout-ridge {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  min-height: 200px;
-  overflow: hidden;
-  z-index: 9;
-  width: 16px;
-  border-right: 8px solid #f3f3f3; }
-  .phi-cutout-ridge > div {
-    width: 8px;
-    position: absolute; }
-    .phi-cutout-ridge > div:nth-child(1) {
-      top: 0;
-      height: 100px;
-      background: transparent url("img/shadow_top.png") no-repeat 100% 0; }
-    .phi-cutout-ridge > div:nth-child(2) {
-      top: 100px;
-      bottom: 100px;
-      background: transparent url("img/shadow_mid.png") repeat-y 100% 100%; }
-    .phi-cutout-ridge > div:nth-child(3) {
-      bottom: 0;
-      height: 100px;
-      background: transparent url("img/shadow_bottom.png") no-repeat 100% 100%; }
-
 phi-avatar {
   display: inline-block;
   width: 42px;
@@ -7726,6 +7697,17 @@ phi-avatar {
     height: 100%; }
     phi-avatar > div > img {
       width: 100%; }
+
+[phi-button].cancel {
+  background: transparent !important;
+  color: #444; }
+  [phi-button].cancel:hover {
+    color: #900; }
+
+[phi-button][disabled] {
+  box-shadow: none;
+  background-color: #444;
+  opacity: 0.6; }
 
 phi-checkbox {
   display: inline-block;
@@ -7793,12 +7775,6 @@ phi-checkbox {
     opacity: 0.6; }
   phi-checkbox:focus .phi-checkbox-label:not(:empty) {
     border-color: black; }
-
-[phi-button].cancel {
-  background: transparent !important;
-  color: #444; }
-  [phi-button].cancel:hover {
-    color: #900; }
 
 phi-content {
   display: block;
@@ -8231,6 +8207,35 @@ phi-toolbar {
     color: #fff;
     font-weight: normal;
     margin: 0 1em; }
+
+.phi-cutout {
+  position: relative; }
+
+.phi-cutout-ridge {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  min-height: 200px;
+  overflow: hidden;
+  z-index: 9;
+  width: 16px;
+  border-right: 8px solid #f3f3f3; }
+  .phi-cutout-ridge > div {
+    width: 8px;
+    position: absolute; }
+    .phi-cutout-ridge > div:nth-child(1) {
+      top: 0;
+      height: 100px;
+      background: transparent url("img/shadow_top.png") no-repeat 100% 0; }
+    .phi-cutout-ridge > div:nth-child(2) {
+      top: 100px;
+      bottom: 100px;
+      background: transparent url("img/shadow_mid.png") repeat-y 100% 100%; }
+    .phi-cutout-ridge > div:nth-child(3) {
+      bottom: 0;
+      height: 100px;
+      background: transparent url("img/shadow_bottom.png") no-repeat 100% 100%; }
 
 [phi-color-tint] {
   position: relative; }

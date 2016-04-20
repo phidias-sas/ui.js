@@ -10,4 +10,10 @@
         }
     }
 
+    &[disabled] {
+        box-shadow: none;
+        background-color: #444;
+        opacity: 0.6;
+    }
+
 }

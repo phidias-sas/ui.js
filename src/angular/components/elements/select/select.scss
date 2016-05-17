@@ -52,5 +52,14 @@ phi-select {
         max-height: 320px;
         overflow: auto;
     }
+}
 
+phi-option {
+    display: block;
+
+    a {
+        display: block;
+        padding: 8px 12px;
+        cursor: pointer;
+    }
 }

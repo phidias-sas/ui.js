@@ -7685,6 +7685,35 @@ Based on: https://github.com/angular/material/blob/master/src/core/style/layout.
 [phi-z="5"] {
   box-shadow: 0 19px 36px 0 #8a8a8a; }
 
+.phi-cutout {
+  position: relative; }
+
+.phi-cutout-ridge {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  min-height: 200px;
+  overflow: hidden;
+  z-index: 9;
+  width: 16px;
+  border-right: 8px solid #f3f3f3; }
+  .phi-cutout-ridge > div {
+    width: 8px;
+    position: absolute; }
+    .phi-cutout-ridge > div:nth-child(1) {
+      top: 0;
+      height: 100px;
+      background: transparent url("img/shadow_top.png") no-repeat 100% 0; }
+    .phi-cutout-ridge > div:nth-child(2) {
+      top: 100px;
+      bottom: 100px;
+      background: transparent url("img/shadow_mid.png") repeat-y 100% 100%; }
+    .phi-cutout-ridge > div:nth-child(3) {
+      bottom: 0;
+      height: 100px;
+      background: transparent url("img/shadow_bottom.png") no-repeat 100% 100%; }
+
 phi-avatar {
   display: inline-block;
   width: 42px;
@@ -8170,6 +8199,13 @@ phi-select {
     max-height: 320px;
     overflow: auto; }
 
+phi-option {
+  display: block; }
+  phi-option a {
+    display: block;
+    padding: 8px 12px;
+    cursor: pointer; }
+
 phi-sidebar {
   width: 80%;
   min-width: 200px;
@@ -8207,35 +8243,6 @@ phi-toolbar {
     color: #fff;
     font-weight: normal;
     margin: 0 1em; }
-
-.phi-cutout {
-  position: relative; }
-
-.phi-cutout-ridge {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  min-height: 200px;
-  overflow: hidden;
-  z-index: 9;
-  width: 16px;
-  border-right: 8px solid #f3f3f3; }
-  .phi-cutout-ridge > div {
-    width: 8px;
-    position: absolute; }
-    .phi-cutout-ridge > div:nth-child(1) {
-      top: 0;
-      height: 100px;
-      background: transparent url("img/shadow_top.png") no-repeat 100% 0; }
-    .phi-cutout-ridge > div:nth-child(2) {
-      top: 100px;
-      bottom: 100px;
-      background: transparent url("img/shadow_mid.png") repeat-y 100% 100%; }
-    .phi-cutout-ridge > div:nth-child(3) {
-      bottom: 0;
-      height: 100px;
-      background: transparent url("img/shadow_bottom.png") no-repeat 100% 100%; }
 
 [phi-color-tint] {
   position: relative; }

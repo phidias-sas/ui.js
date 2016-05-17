@@ -4,7 +4,7 @@
 <dom-module id="phi-icon">
     <template>
         <template is="dom-if" if="{{!src}}" >
-            <i class$="fa {{icon}} {{spinClass(spin)}}"></i>
+            <i class$="fa {{icon}}"></i>
         </template>
         <template is="dom-if" if="{{src}}" >
             <img src="{{src}}" alt="{{icon}}">
@@ -30,8 +30,8 @@
         }
 
         :host[spin] {
-            -webkit-animation: fa-spin 2s infinite linear;
-            animation: fa-spin 2s infinite linear;
+            -webkit-animation: fa-spin 1s infinite linear;
+            animation: fa-spin 1s infinite linear;
         }
 
         @-webkit-keyframes fa-spin {
@@ -76,10 +76,6 @@
                     type: Boolean,
                     value: false
                 }
-            },
-
-            spinClass: function(spin) {
-                return spin ? 'fa-spin' : '';
             }
         });
     </script>

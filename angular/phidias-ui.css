@@ -27,210 +27,7 @@ Set colors based on current color theme
   src: url("https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/fonts/glyphicons-halflings-regular.eot?#iefix") format("embedded-opentype"), url("https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/fonts/glyphicons-halflings-regular.woff2") format("woff2"), url("https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/fonts/glyphicons-halflings-regular.woff") format("woff"), url("https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/fonts/glyphicons-halflings-regular.ttf") format("truetype"), url("https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular") format("svg"); }
 
 .bootstrap {
-  /*!
- * Bootstrap v3.3.6 (http://getbootstrap.com)
- * Copyright 2011-2015 Twitter, Inc.
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
- */
-  /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
-  /*! Source: https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css */
   /*# sourceMappingURL=bootstrap.css.map */ }
-  .bootstrap html {
-    font-family: sans-serif;
-    -webkit-text-size-adjust: 100%;
-    -ms-text-size-adjust: 100%; }
-  .bootstrap body {
-    margin: 0; }
-  .bootstrap article,
-  .bootstrap aside,
-  .bootstrap details,
-  .bootstrap figcaption,
-  .bootstrap figure,
-  .bootstrap footer,
-  .bootstrap header,
-  .bootstrap hgroup,
-  .bootstrap main,
-  .bootstrap menu,
-  .bootstrap nav,
-  .bootstrap section,
-  .bootstrap summary {
-    display: block; }
-  .bootstrap audio,
-  .bootstrap canvas,
-  .bootstrap progress,
-  .bootstrap video {
-    display: inline-block;
-    vertical-align: baseline; }
-  .bootstrap audio:not([controls]) {
-    display: none;
-    height: 0; }
-  .bootstrap [hidden],
-  .bootstrap template {
-    display: none; }
-  .bootstrap a {
-    background-color: transparent; }
-  .bootstrap a:active,
-  .bootstrap a:hover {
-    outline: 0; }
-  .bootstrap abbr[title] {
-    border-bottom: 1px dotted; }
-  .bootstrap b,
-  .bootstrap strong {
-    font-weight: bold; }
-  .bootstrap dfn {
-    font-style: italic; }
-  .bootstrap h1 {
-    margin: .67em 0;
-    font-size: 2em; }
-  .bootstrap mark {
-    color: #000;
-    background: #ff0; }
-  .bootstrap small {
-    font-size: 80%; }
-  .bootstrap sub,
-  .bootstrap sup {
-    position: relative;
-    font-size: 75%;
-    line-height: 0;
-    vertical-align: baseline; }
-  .bootstrap sup {
-    top: -.5em; }
-  .bootstrap sub {
-    bottom: -.25em; }
-  .bootstrap img {
-    border: 0; }
-  .bootstrap svg:not(:root) {
-    overflow: hidden; }
-  .bootstrap figure {
-    margin: 1em 40px; }
-  .bootstrap hr {
-    height: 0;
-    -webkit-box-sizing: content-box;
-    -moz-box-sizing: content-box;
-    box-sizing: content-box; }
-  .bootstrap pre {
-    overflow: auto; }
-  .bootstrap code,
-  .bootstrap kbd,
-  .bootstrap pre,
-  .bootstrap samp {
-    font-family: monospace, monospace;
-    font-size: 1em; }
-  .bootstrap button,
-  .bootstrap input,
-  .bootstrap optgroup,
-  .bootstrap select,
-  .bootstrap textarea {
-    margin: 0;
-    font: inherit;
-    color: inherit; }
-  .bootstrap button {
-    overflow: visible; }
-  .bootstrap button,
-  .bootstrap select {
-    text-transform: none; }
-  .bootstrap button,
-  .bootstrap html input[type="button"],
-  .bootstrap input[type="reset"],
-  .bootstrap input[type="submit"] {
-    -webkit-appearance: button;
-    cursor: pointer; }
-  .bootstrap button[disabled],
-  .bootstrap html input[disabled] {
-    cursor: default; }
-  .bootstrap button::-moz-focus-inner,
-  .bootstrap input::-moz-focus-inner {
-    padding: 0;
-    border: 0; }
-  .bootstrap input {
-    line-height: normal; }
-  .bootstrap input[type="checkbox"],
-  .bootstrap input[type="radio"] {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    padding: 0; }
-  .bootstrap input[type="number"]::-webkit-inner-spin-button,
-  .bootstrap input[type="number"]::-webkit-outer-spin-button {
-    height: auto; }
-  .bootstrap input[type="search"] {
-    -webkit-box-sizing: content-box;
-    -moz-box-sizing: content-box;
-    box-sizing: content-box;
-    -webkit-appearance: textfield; }
-  .bootstrap input[type="search"]::-webkit-search-cancel-button,
-  .bootstrap input[type="search"]::-webkit-search-decoration {
-    -webkit-appearance: none; }
-  .bootstrap fieldset {
-    padding: .35em .625em .75em;
-    margin: 0 2px;
-    border: 1px solid #c0c0c0; }
-  .bootstrap legend {
-    padding: 0;
-    border: 0; }
-  .bootstrap textarea {
-    overflow: auto; }
-  .bootstrap optgroup {
-    font-weight: bold; }
-  .bootstrap table {
-    border-spacing: 0;
-    border-collapse: collapse; }
-  .bootstrap td,
-  .bootstrap th {
-    padding: 0; }
-  @media print {
-    .bootstrap *,
-    .bootstrap *:before,
-    .bootstrap *:after {
-      color: #000 !important;
-      text-shadow: none !important;
-      background: transparent !important;
-      -webkit-box-shadow: none !important;
-      box-shadow: none !important; }
-    .bootstrap a,
-    .bootstrap a:visited {
-      text-decoration: underline; }
-    .bootstrap a[href]:after {
-      content: " (" attr(href) ")"; }
-    .bootstrap abbr[title]:after {
-      content: " (" attr(title) ")"; }
-    .bootstrap a[href^="#"]:after,
-    .bootstrap a[href^="javascript:"]:after {
-      content: ""; }
-    .bootstrap pre,
-    .bootstrap blockquote {
-      border: 1px solid #999;
-      page-break-inside: avoid; }
-    .bootstrap thead {
-      display: table-header-group; }
-    .bootstrap tr,
-    .bootstrap img {
-      page-break-inside: avoid; }
-    .bootstrap img {
-      max-width: 100% !important; }
-    .bootstrap p,
-    .bootstrap h2,
-    .bootstrap h3 {
-      orphans: 3;
-      widows: 3; }
-    .bootstrap h2,
-    .bootstrap h3 {
-      page-break-after: avoid; }
-    .bootstrap .navbar {
-      display: none; }
-    .bootstrap .btn > .caret,
-    .bootstrap .dropup > .btn > .caret {
-      border-top-color: #000 !important; }
-    .bootstrap .label {
-      border: 1px solid #000; }
-    .bootstrap .table {
-      border-collapse: collapse !important; }
-    .bootstrap .table td,
-    .bootstrap .table th {
-      background-color: #fff !important; }
-    .bootstrap .table-bordered th,
-    .bootstrap .table-bordered td {
-      border: 1px solid #ddd !important; } }
   .bootstrap .glyphicon {
     position: relative;
     top: 1px;
@@ -5920,6 +5717,9 @@ Set colors based on current color theme
     [phi-button]:active[phi-color-theme=default] {
       background-color: #3a83dc !important; }
 
+[phi-inline] {
+  display: inline-block; }
+
 [phi-if-screen] {
   display: none; }
 
@@ -5952,9 +5752,6 @@ Set colors based on current color theme
   [phi-if-screen~=gt-large] {
     display: inline;
     display: initial; } }
-
-[phi-inline] {
-  display: inline-block; }
 
 /**
 
@@ -7685,35 +7482,6 @@ Based on: https://github.com/angular/material/blob/master/src/core/style/layout.
 [phi-z="5"] {
   box-shadow: 0 19px 36px 0 #8a8a8a; }
 
-.phi-cutout {
-  position: relative; }
-
-.phi-cutout-ridge {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  min-height: 200px;
-  overflow: hidden;
-  z-index: 9;
-  width: 16px;
-  border-right: 8px solid #f3f3f3; }
-  .phi-cutout-ridge > div {
-    width: 8px;
-    position: absolute; }
-    .phi-cutout-ridge > div:nth-child(1) {
-      top: 0;
-      height: 100px;
-      background: transparent url("img/shadow_top.png") no-repeat 100% 0; }
-    .phi-cutout-ridge > div:nth-child(2) {
-      top: 100px;
-      bottom: 100px;
-      background: transparent url("img/shadow_mid.png") repeat-y 100% 100%; }
-    .phi-cutout-ridge > div:nth-child(3) {
-      bottom: 0;
-      height: 100px;
-      background: transparent url("img/shadow_bottom.png") no-repeat 100% 100%; }
-
 phi-avatar {
   display: inline-block;
   width: 42px;
@@ -8278,6 +8046,9 @@ phi-toolbar {
 .phi-texture-emboss-highlighted, button[phi-texture="emboss"]:hover, button[phi-texture="emboss"]:focus {
   border: 1px solid #bbb; }
 
+button[phi-texture="emboss"] {
+  padding: 12px 20px; }
+
 .phi-group > [phi-texture="emboss"] {
   border-radius: 0; }
   .phi-group > [phi-texture="emboss"]:first-child {
@@ -8286,6 +8057,3 @@ phi-toolbar {
   .phi-group > [phi-texture="emboss"]:last-child {
     border-top-right-radius: 3px;
     border-bottom-right-radius: 3px; }
-
-button[phi-texture="emboss"] {
-  padding: 12px 20px; }

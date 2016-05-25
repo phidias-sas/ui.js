@@ -9,6 +9,7 @@
   "dependencies": {
     "angular": "*",
     "angular-aria": "*",
+    "angular-strap": "*",
     "polymer": "Polymer/polymer"
   }
 }
